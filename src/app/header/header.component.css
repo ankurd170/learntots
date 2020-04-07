@@ -1,0 +1,9 @@
+.error p
+{
+    color:red;
+}
+
+.error input
+{
+ border-color: red;
+}

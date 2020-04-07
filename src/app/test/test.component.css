@@ -1,0 +1,64 @@
+.correctoption
+{
+    background-color: springgreen;
+}
+
+.wrongoption
+{
+    background-color: tomato;
+}
+
+.unattemptedoption
+{
+    background-color: cornsilk;
+}
+
+td:hover {
+	background:#FFFFDD;
+}
+
+input:checked {
+	background-color: darkblue;
+	border:1px solid #FFCC00;
+}
+
+.s
+{
+    margin-left: 490px;
+}
+
+.c1
+{
+    margin-left: 380px;
+}
+
+.c2
+{
+    margin-left: 285px;
+}
+
+.c3
+{
+    margin-left: 130px;
+}
+
+.b1
+{
+   margin-left: 65px;
+}
+
+.b2
+{
+    margin-right: 10px;
+}
+
+.b3
+{
+    margin-left: 0px;
+}
+
+.res
+{
+    float: right;
+}
+

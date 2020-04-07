@@ -1,0 +1,158 @@
+<div *ngIf="mode=='choose'">
+<h1 class="text-center">CHOOSE TEST SET</h1>
+    <!-- Card -->
+<div class="card card-image"
+  style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+
+  <!-- Content -->
+  <div style="color: crimson;font-weight: bolder;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="c1 td-flex align-items-center rgba-black-strong py-5 px-4">
+    <div>
+      <h5 class="pink-text"><i class="fas fa-chart-pie"></i>COMPUTER FUNDAMENTALS TEST</h5>
+      <h3 class="card-title pt-2"><strong>BEGINNER LEVEL TEST</strong></h3>
+      <p>Test based on basics of computer technology.</p>
+      <a class="btn btn-pink b1" (click)="selected(1)"><i class="fas fa-clone left"></i>Take Test</a>
+    </div>
+  </div>
+
+</div>
+<!-- Card -->
+
+
+<div class="card card-image"
+  style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+
+  <!-- Content -->
+  <div class="c2 text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+    <div style="color: darkblue; font-weight: bolder;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" >
+      <h5 class="pink-text"><i class="fas fa-chart-pie"></i>SCIENCE & TECHNOLOGY TEST</h5>
+      <h3 class="card-title pt-2"><strong>MEDIUM LEVEL TEST</strong></h3>
+      <p>Test based on the fundamental concepts of science and technology.</p>
+      <a class="btn btn-pink b2" (click)="selected(2)"><i class="fas fa-clone left"></i>Take Quiz</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="card card-image"
+  style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+
+  <!-- Content -->
+  <div  class="c3 text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+    <div style="color: darkgoldenrod; font-weight: bolder;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+      <h5 class="pink-text"><i class="fas fa-chart-pie"></i>MARKETING TEST</h5>
+      <h3 class="card-title pt-2"><strong>HARD LEVEL TEST</strong></h3>
+      <p>Test based on the fundamental concepts of marketing,catering to the basics of product and market technology.</p>
+      <a class="btn btn-pink b3" (click)="selected(3)"><i class="fas fa-clone left"></i>Take Quiz</a>
+    </div>
+  </div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div *ngIf="mode=='start' ">
+    <h2 class="text-center">TEST INSTRUCTIONS</h2><br><br>
+    <p>1.This quiz contains a total of 10 questions.<br/>
+     2.Total time provided for this quiz is 120 seconds.<br/>
+     3.Each correct question carries +4 marks.<br/>
+     4.Each wrong question gives a penalty of -1 marks.<br/>
+     5.Two buttons on the bottom are provided for navigating to the next or previous question.<br/>
+     6.You can submit the test once all the questions have been seen once,or if the timer ends,test is submitted automatically.<br/><br/>
+    
+    
+    <input type="submit"  class="btn btn-info btn-lg s" name="next" value="start the test" (click)="starttest()">
+    
+</div>
+
+
+
+<div *ngIf="mode=='quiz' ">
+<div>
+    <p>0{{this.hr}} : 0{{this.min}} : {{this.sec | number:'2.0'}}</p>
+</div> 
+<table class="table table-borderless table-hover">
+
+    <tr class="table-dark">
+        <th>Question {{this.no}} of 10</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+<tr><td>{{this.qs}}</td></tr>
+<tr><td><input type="radio" name="answer" value="a"  [(ngModel)]="this.ryt">{{this.op1}}</td></tr>
+<tr><td><input type="radio" name="answer" value="b"  [(ngModel)]="this.ryt">{{this.op2}}</td></tr>
+<tr><td><input type="radio" name="answer" value="c"  [(ngModel)]="this.ryt">{{this.op3}}</td></tr>
+<tr><td><input type="radio" name="answer" value="d"  [(ngModel)]="this.ryt">{{this.op4}}</td></tr>
+<div *ngIf="btnname=='next'">
+<tr><td><input type="submit"  name="next" class=" btn btn-success btn-lg" value="{{btnname}}" (click)="nextques(no)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class=" btn btn-info btn-lg" name="prev" value="previous" (click)="prevques(no)"></td></tr></div>
+
+<div *ngIf="btnname=='submit'">
+    <tr><td><input type="submit" class="btn btn-success btn-danger" name="next" value="{{btnname}}" (click)="submittest(no)"></td></tr></div>
+    
+</table>
+</div>
+
+
+<div *ngIf="mode=='submit'">
+Thank you for giving the test.
+
+<tr><td><input type="submit" class=" btn btn-warning btn-lg" name="result" value="result" (click)="result()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="res btn btn-info btn-lg" name="asis" value="analysis" (click)="analyse()"></td></tr>
+
+</div>
+
+
+<div *ngIf="mode=='result'">
+
+    <h4>Your score is:</h4>
+<tr><td>{{this.score}}</td></tr><br><br>
+<!--chart-->
+<input type="submit" class="res btn btn-success btn-lg" name="next" value="back" (click)="modeback()">   
+<div class="chart">
+    <canvas baseChart
+      [data]="pieChartData"
+      [labels]="pieChartLabels"
+      [chartType]="pieChartType"
+      [options]="pieChartOptions"
+      [colors]="pieChartColors"
+      [legend]="pieChartLegend">
+    </canvas>
+  </div>
+
+  
+</div>
+
+
+
+
+    <div *ngIf="mode=='analysis'">
+        <table class="table table-bordered table-hover t">
+            <thead>
+                <tr class="table-dark">
+                    <th>Id</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let q of ques; index as i" >
+            <tr><td>{{q.question}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{this.status[i]}}</b></td></tr><br/>
+            <tr><td [ngClass]="whichclassapply(i,'a')">{{q.ptn1}}</td></tr>
+            <tr><td [ngClass]="whichclassapply(i,'b')">{{q.ptn2}}</td></tr>
+            <tr><td [ngClass]="whichclassapply(i,'c')">{{q.ptn3}}</td></tr>
+            <tr><td [ngClass]="whichclassapply(i,'d')">{{q.ptn4}}</td></tr><br/><br/><br/>
+        </tbody>
+        </table>
+        
+        <input type="submit"  name="next" class="btn btn-info btn-lg" value="back" (click)="modeback()">
+        </div>
+        

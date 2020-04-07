@@ -1,0 +1,68 @@
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Quizjs.com</a>
+      <a class="btn btn-primary" (click)="openModal(template)">Log In</a>
+    </div>
+  </nav>
+
+
+
+<!--modal-->
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Enter details</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="form" (ngSubmit)="login(data)" #data=ngForm>
+    <div class="form-row" >
+      <div class="col">
+    <div class="form-group" [class.error]="uid.touched && uid.invalid">
+      <label for="ename">Login Id*</label>
+      <input type="text" class="form-control" #uid=ngModel name="loginid" required [(ngModel)]="user.userid">
+      <p *ngIf="uid.touched && uid.invalid">
+        Id required</p>				
+        </div>																																																																																																																																																																																																																	
+        </div>
+      </div>
+      <div class="form-row" >
+      <div class="col">
+      <div class="form-group" [class.error]="upass.touched && upass.invalid">
+        <label for="ename">Password*</label>
+        <input type="password" name="pass" #upass=ngModel class="form-control" required [(ngModel)]="user.password">
+        <p *ngIf="upass.touched && upass.invalid">
+          password required</p>				
+         </div>
+      </div>
+    </div>
+  
+
+<div class="form-group">
+
+  <input type="submit" value="submit" class="btn btn-success btn-block">
+</div>
+</form>
+  </div>
+</ng-template>
+
+
+
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">Learn,quiz and enjoy an interative fun experience!!</h1>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          
+        </div>
+      </div>
+    </div>
+  </header>

@@ -1,0 +1,49 @@
+.leftbox
+{
+   width: 400px;
+    float: left;
+
+}
+
+
+
+.box
+{
+    width: 500px;
+    margin-left: 250px;
+    margin-top: 50px;
+    height: 500px;
+    background-color: rgb(235,235,235);
+    padding: 0px;
+    clear: both;
+}
+
+.stats
+{  
+    background-color: cornsilk;
+    width: 300px;
+    float: right;
+ 
+}
+
+
+
+.run
+{
+
+    padding-top: 5px;
+}
+
+.butn
+{
+    margin-left: 2px;
+    width: 180px;
+    height: 180px;
+    padding: 0px;
+    background-color: burlywood;
+}
+
+.st
+{
+    margin-left: 510px;
+}

@@ -1,0 +1,78 @@
+<div *ngIf="mode=='welcome'" >
+
+<h1 class="text-center" style="color: chocolate;">WELCOME TO TIC-TAC-TOE</h1><br><br><br>
+<p style="font-size: larger; font-weight: 100; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">RULES: <br><br>
+ 1.The game involves 2 players. <br>
+ 2.It contains a grid of 9 squares. <br>
+ 3.You can either play your symbol as "X"(crosses) or "O"(noughts). <br>
+ 4.First player to place one's symbol diagonally,vertically or diagonally in all 3 places wins. <br><br>
+ 
+</p>
+<h3 class="text-center" style="color:darkcyan text">BEST   OF   LUCK!!</h3><br>
+<button class="btn btn-warning st btn-lg" (click)="start()">start game</button>
+
+</div>
+
+<div *ngIf="mode=='game'">
+
+    <div class="leftbox" style="font-size: large; font-style: italic; font-weight: 800;">
+    first pick who plays first: <br>
+    <input type="button" id="x"  (click)="first($event)"  [disabled]="firstone"  [(ngModel)]="this.st1">&nbsp;&nbsp;
+    <input type="button" id="o"   (click)="first($event)" [disabled]="firstone" [(ngModel)]="this.st2">
+</div>    
+
+
+<div class="stats" >STATS:
+<div class="winner" >
+<input type="text" value="      No WINNER YET   "  readonly [(ngModel)]="this.win">
+</div>
+<div class="run" >
+<input type="text" value="      GAME RUNNING    "  readonly [(ngModel)]="this.game">
+</div>
+</div>
+
+
+
+<table  class="box" style=" border: 1px solid ">        
+<tr>
+<td>
+    <input type="button" class="butn" (click)="turn($event)" [disabled]="one" id="1" [(ngModel)]="this.b1">
+    </td>
+<td >
+    <input type="submit" class="butn" (click)="turn($event)" id="2" [disabled]="two" [(ngModel)]="this.b2">
+    
+</td >
+<td>
+    <input type="submit" class="butn" (click)="turn($event)" id="3" [disabled]="three" [(ngModel)]="this.b3">
+    
+</td>
+</tr>
+<tr>
+    <td><input type="submit" class="butn" (click)="turn($event)" id="4" [disabled]="four"  [(ngModel)]="this.b4">
+ 
+</td>
+<td>
+    <input type="submit" class="butn" (click)="turn($event)" id="5"  [disabled]="five"   [(ngModel)]="this.b5">
+ 
+</td>
+<td >
+    <input type="submit" class="butn" (click)="turn($event)" id="6"  [disabled]="six"  [(ngModel)]="this.b6">
+ 
+</td>
+</tr>
+
+<tr>
+
+<td >
+        <input type="submit" class="butn" (click)="turn($event)" id="7" [disabled]="seven"  [(ngModel)]="this.b7">
+        
+</td>
+        <td><input type="submit"  class="butn" (click)="turn($event)" id="8" [disabled]="eight"   [(ngModel)]="this.b8">
+        
+        </td>
+        <td ><input type="submit"  class="butn" (click)="turn($event)" id="9" [disabled]="nine"  [(ngModel)]="this.b9">
+        
+        </td>
+</tr>
+</table>	
+</div>
