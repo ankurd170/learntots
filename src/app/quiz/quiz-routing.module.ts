@@ -18,8 +18,12 @@ const routes: Routes = [
 [{path:'',component:DashhomeComponent},
   {path:'learn',component:LearnComponent},
 {path:'test',component:TestComponent},
-{path:'Dashboard',component:DashhomeComponent},
+{path:'Dashboard',component:DashhomeComponent,children:
+[{path:'fact',component:FactsknowComponent}
+]
+},
 {path:'game',component:GameComponent},
+
 {path:'fact',component:FactsknowComponent}
 ]
 },

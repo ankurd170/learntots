@@ -1,14 +1,41 @@
 <h3>Welcome {{this.login}}!!</h3>
 <body>
-    <div class="card a">
-    <div class="card-body">
-      <h5 class="card-title">Panel title</h5>
-      <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-      <a class="card-link">Card link</a>
-      <a class="card-link">Another link</a>
-    </div>
+
+<!-- Card -->
+<div class="card card-cascade wider reverse">
+
+  <!-- Card image -->
+  <div class="view view-cascade overlay">
+    <img class="card-img-top" src="/assets/img/top.jpeg"
+      alt="Card image cap">
+    <a href="#!">
+      <div class="mask rgba-white-slight"></div>
+    </a>
   </div>
 
+  <!-- Card content -->
+  <div class="card-body card-body-cascade text-center">
+
+    <!-- Title -->
+    <h4 class="card-title"><strong>Overview</strong></h4>
+    <!-- Subtitle -->
+    <h6 class="font-weight-bold indigo-text py-2">Quizjs welcomes you!!</h6>
+    <!-- Text -->
+    <p class="card-text" style="color: darkblue; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+      Welcome to an interactive and entertaining experience for all looking for learning and a well-rounded venture,so enjoy!!
+    </p>
+
+    <!-- Linkedin -->
+    <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
+    <!-- Twitter -->
+    <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
+    <!-- Dribbble -->
+    <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
+
+  </div>
+
+</div>
+<!-- Card -->
 
 
 
@@ -96,7 +123,7 @@
           <!--Title-->
           <h4 class="card-title">DID YOU KNOW?</h4>
           <!--Text-->
-          <p class="card-text" style="font-weight: 900;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{this.fact}}!!!!</p><br><br><br>
+          <p class="card-text" style="font-weight: 900;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{this.fact}}!!!!</p><br><br>
           <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
           <button type="button" class="btn btn-light-blue btn-md" routerLink="fact">View more fun facts....</button>
   
@@ -114,19 +141,6 @@
 
 
 
-  <div class="card text-center">
-    <div class="card-header">
-      Featured
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text"></p>
-      <a href="#!" class="btn btn-primary">Go somewhere</a>
-    </div>
-    <div class="card-footer text-muted">
-      2 days ago
-    </div>
-  </div>
 
   <div class="card">
     <div class="card-header">
