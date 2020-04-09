@@ -13,14 +13,16 @@ export class GameComponent implements OnInit {
   st1="X";st2="O";st="";p;v;turns=0;buttn;
   b1="";b2="";b3="";b4="";b5="";b6="";b7="";b8="";b9="";
 win;game;firstone=false;
-one=false;two=false;three=false;
-four=false;five=false;six=false;
-seven=false;eight=false;nine=false;
+one=true;two=true;three=true;
+four=true;five=true;six=true;
+seven=true;eight=true;nine=true;
 gameswonx=0;gameswony=0;gamestied=0;gamesplayed=0;
 
 mode="welcome";
 
-  constructor(private authoservice:AuthoService) { }
+  constructor(private authoservice:AuthoService) 
+  { 
+  }
 
   ngOnInit(): void {
   }
@@ -182,7 +184,14 @@ mode="welcome";
       }
 
 
+initialize()
+{
+  this.one=true;this.two=true;this.three=true;
+  this.four=true;this.five=true;this.six=true;
+  this.seven=true;this.eight=true;this.nine=true;
+  this.mode="game";
 
+}
       
   
   
@@ -210,9 +219,10 @@ mode="welcome";
   start()  //start game
   {
     
-    
+    this.one=false;this.two=false;this.three=false;
+    this.four=false;this.five=false;this.six=false;
+    this.seven=false;this.eight=false;this.nine=false;
     this.buttn="";
-    this.mode="game";
   }
   
   
