@@ -208,7 +208,7 @@ initialize()
     else
   {this.st1="o is first player";
   this.st2="X is second player";
-   this.turns=2;
+   this.turns=0;
     }
     this.firstone=true;
     this.start();
