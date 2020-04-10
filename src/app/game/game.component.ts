@@ -169,7 +169,7 @@ mode="welcome";
       }
         
   //if no clear winner found 		
-  else if (this.turns==9)
+  else if (this.turns==10)
        {
         this.win='Game is tied!!';	 
         this.gamestied++;
